@@ -1,0 +1,49 @@
+/* RESET */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* RESET */
+
+/* BRANDING COLORS */
+
+$teal: #1D8489;
+
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $teal;
+}
+
+#drum-machine {
+  height: 70%;
+  width: 60%;
+  border: 4px solid black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  #display {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 50%;
+    width: 30%;
+    gap: 10px;
+    .keyPad {
+      cursor: pointer;
+      border-radius: 5px;
+    } 
+  }
+}
