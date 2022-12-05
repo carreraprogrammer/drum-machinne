@@ -2,61 +2,13 @@ import $ from 'jquery';
 import ReactDOM from 'react-dom';
 import { useEffect } from 'react';
 
-const drumKeys = [
-  {
-    key: 'Q',
-    sound: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3',
-    soundName: 'Heater1'
-  },
-  {
-    key: 'W',
-    sound: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3',
-    soundName: 'Heater2'
-  },
-  {
-    key: 'E',
-    sound: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3',
-    soundName: 'Heater3'
-  },
-  {
-    key: 'A',
-    sound: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3',
-    soundName: 'Heater4'
-  },
-  {
-    key: 'S',
-    sound: 'https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3',
-    soundName: 'Clap'
-  },
-  {
-    key: 'D',
-    sound: 'https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3',
-    soundName: 'OpenH'
-  },
-  {
-    key: 'Z',
-    sound: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3',
-    soundName: 'KiknH'
-  },
-  {
-    key: 'X',
-    sound: 'https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3',
-    soundName: 'Kik'
-  },
-  {
-    key: 'C',
-    sound: 'https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3',
-    soundName: 'ClosedHH'
-  },
-]
-
-
-const Pad = () => {
+const Pad = (props) => {
+  const bank = props.bank
   const colorArray = ['#1D8489', '#1D2789', '#701D89', '#891D46', '#89511D', '#65891D', '#1D8932']
 
   useEffect(
     () => {
-      document.addEventListener('keydown', (e) => handleKeyPress(e.key));
+      document.addEventListener('keydown', (e) => handleKeyPress(e.key.toUpperCase()));
     }, []
   )
 
@@ -96,7 +48,7 @@ const Pad = () => {
 
   return (
     <div id="display" onKeyPress={(e) => e.key === 'Q' ? console.log('this is a q') : null}>
-      {drumKeys.map((key) => 
+      {bank.map((key) => 
       (<button
         className="keyPad" 
         key={key.key}
