@@ -14,6 +14,7 @@ const ControlPanel = (props) => {
     }
     return (
     <div id='controlPanel'>
+        <h1 id="controlTitle">WELLCOME TO YOUR DRUM MACHINNE</h1>
         <h3 id='bankTitle'>You are playing with {bank === drumKeys ? 'BANK ONE' : 'BANK TWO'}</h3>
         <button id="changeBank" onClick = {() => handleBank(bank)}>Change sounds</button>
     </div>
