@@ -125,7 +125,7 @@ Example command:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/carreraprogrammer/h1-converter/issues).
+Feel free to check the [issues page](https://github.com/carreraprogrammer/drum-machinne/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
