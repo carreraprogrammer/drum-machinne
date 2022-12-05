@@ -34,7 +34,6 @@ const Pad = (props) => {
     const key = document.getElementById(keyName)
     $(key).css({
       backgroundColor: `${color}`,
-      color: 'white',
       fontWeight: 'bold',
       transition: 'all 0.2s ease-out',
       opacity: 0.8,
@@ -42,13 +41,14 @@ const Pad = (props) => {
     })
     setTimeout(() => {$(key).css({
       backgroundColor: '#f4f5f0',
+      color: `${color2}`,
       opacity: 1,
       transform: 'scale(1)'
     })}, 300)
 
     $(key).css({
       border: `3px solid ${color}`,
-      color: `${color2}`,
+      color: 'white',
       fontWeight: 'bolder'
     })
     
