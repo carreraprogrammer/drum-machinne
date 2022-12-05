@@ -8,7 +8,7 @@ const Pad = (props) => {
 
   useEffect(
     () => {
-      document.addEventListener('keydown', (e) => handleKeyPress(e.key.toUpperCase()));
+      document.addEventListener('keydown', (e) => {handleKeyPress(e.key.toUpperCase())});
     }, []
   )
 
@@ -30,19 +30,28 @@ const Pad = (props) => {
 
   const handleKeyPress = (keyName) => {
     const color = colorArray[Math.floor(Math.random() * colorArray.length)]
+    const color2 = colorArray[Math.floor(Math.random() * colorArray.length)]
     const key = document.getElementById(keyName)
     $(key).css({
       backgroundColor: `${color}`,
       color: 'white',
       fontWeight: 'bold',
       transition: 'all 0.2s ease-out',
-      opacity: 0.8
+      opacity: 0.8,
+      transform: 'scale(1.1)'
     })
     setTimeout(() => {$(key).css({
-      backgroundColor: 'white',
-      color: 'black',
-      opacity: 1
+      backgroundColor: '#f4f5f0',
+      opacity: 1,
+      transform: 'scale(1)'
     })}, 300)
+
+    $(key).css({
+      border: `3px solid ${color}`,
+      color: `${color2}`,
+      fontWeight: 'bolder'
+    })
+    
     return key !== null ? key.click() : null
   }
 
@@ -53,7 +62,7 @@ const Pad = (props) => {
         className="keyPad" 
         key={key.key}
         onMouseOver={randomColor}
-        onClick = {() => playSound(key.soundName)}
+        onClick = {() => {playSound(key.soundName); randomColor()}}
         id = {key.key}
       >
           <audio src={key.sound} id={key.soundName}></audio>

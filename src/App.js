@@ -10,8 +10,11 @@ const App = () => {
 
   return (
     <div id="drum-machine">
-        <ControlPanel />
-        <Pad bank={bank} />
+        <ControlPanel setBank={setBank} bank={bank}/>
+        <div id="padContainer">
+          <Pad bank={bank} />
+        </div>
+       
     </div>
   )
 }
