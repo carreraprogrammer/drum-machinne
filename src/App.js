@@ -13,7 +13,6 @@ const App = () => {
         <div id="padContainer">
           <Pad bank={bank} />
         </div>
-       
     </div>
   )
 }
