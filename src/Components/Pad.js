@@ -9,7 +9,7 @@ const Pad = (props) => {
   useEffect(
     () => {
       document.addEventListener('keydown', (e) => {handleKeyPress(e.key.toUpperCase())});
-    }, []
+    },
   )
 
   const randomColor = (e) => {
