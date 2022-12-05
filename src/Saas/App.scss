@@ -45,5 +45,8 @@ $teal: #1D8489;
       cursor: pointer;
       border-radius: 5px;
     } 
+    .keyPad:active {
+      background-color: red;
+    }
   }
 }
